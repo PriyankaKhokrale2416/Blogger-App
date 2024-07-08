@@ -51,7 +51,8 @@ public class UserController {
 	{
 		UserDto updatedUser = this.userService.updateUser(userDto, uid);
 		
-		
+		logger.info("Inside update user"+updatedUser);
+
 		return new ResponseEntity<>(updatedUser, HttpStatus.OK);
 		
 	}
@@ -61,7 +62,8 @@ public class UserController {
 	{
 		this.userService.deleteUser(uid);
 		
-		
+		logger.info("Inside delete user");
+
 		return new ResponseEntity<>(Map.of("message", "user deleted successfully"), HttpStatus.OK);
 		
 	}
